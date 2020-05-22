@@ -1,0 +1,166 @@
+#footer-container {
+    border-top: 1px solid white;
+    overflow: hidden !important;
+}    
+
+
+#header-row {
+    border-bottom: 1px solid white;
+    overflow: hidden !important;
+}
+
+
+#main-content
+{
+    overflow-y: auto;
+}
+
+
+#story-details-header {
+    background:green;
+    color:yellow;
+    font-family: 'Indie Flower',cursive;
+    font-size:xx-large;
+    font-weight:bold
+}
+
+#story-details-details {
+    background:#80FF80;
+    color:black;
+    font-family: 'Noto Serif', serif;
+    font-size:large;
+    font-weight:bold;
+    text-align:center;
+}
+
+
+body {
+    overflow: hidden;
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+
+.story-img {
+    box-shadow: 10px 10px 30px black;
+    max-height: 100%;
+    max-width: 100%;
+
+    cursor:pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+
+.story-cell {
+    max-height:70vh;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    text-align:center;
+    width:20%;
+}
+
+
+.w3-button {
+    border:1px solid black;
+}
+
+
+.w3-btn {
+    border:1px solid black;
+}
+
+
+@media (max-width:600px) {
+    .story-cell {
+	width:100%;
+    }
+}
+
+
+
+
+
+/******************************************************************************/
+.story-img:hover {
+    animation: shake;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+
+/******************************************************************************/
+/* Used to make the spash-screen elephant shrink. */
+
+.shrink-to-nothing {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 4.7s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 4.7s;
+    -webkit-animation-name: shrink;
+    -webkit-animation-duration: 4.7s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: shrink;
+    -moz-animation-duration: 4.7s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    
+    transition-property: -moz-transform;
+    transition-duration: 4.7s;
+    animation-name: shrink;
+    animation-duration: 4.7s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@-webkit-keyframes shrink {
+    from {
+        -webkit-transform:scale(1);
+    }
+    to {
+        -webkit-transform:scale(0);
+    }
+}
+@-moz-keyframes shrink {
+    from {
+        -moz-transform:scale(1);
+    }
+    to {
+        -moz-transform:scale(0);
+    }
+}
+@keyframes shrink {
+    from {
+        transform:scale(1);
+    }
+    to {
+        transform:scale(0);
+    }
+}
+
+
