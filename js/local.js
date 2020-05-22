@@ -285,6 +285,11 @@ function displayElephant (ix)
 /******************************************************************************/
 /******************************************************************************/
 /******************************************************************************/
+const C_Email_1 = "edgartheelephant";
+const C_Email_2 = "critos";
+const C_Email_3 = ".co.uk";
+
+
 const C_Stories = [
     { fileName:"readMeFirst",
       header:"Before you start",
@@ -307,16 +312,21 @@ const C_Stories = [
              <p>You can download individual files by clicking on the various tiles on this web page.  Alternatively, click the links below to download complete collections.</p>
 
 	     <div style="text-align:center">
-               <a id="story-details-download-mp3"      download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="???"><i class="fa fa-headphones"></i> MP3</a>&nbsp;
-	       <a id="story-details-download-activity" download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="???"><i class="fa fa-download"></i> Activity</a><br><br>
+               <a id="story-details-download-mp3"      download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="???"><i class="fa fa-headphones"></i> Audio</a>&nbsp;
+	       <a id="story-details-download-activity" download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="???"><i class="fa fa-download"></i> Activity</a><br>
             </div><hr style="border-color:black">
+
+
+
+             <div style="text-align:center;text-decoration:underline;font-weight:bold">Contact us</div>
+             <p>You can contact us at <a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}.</a></p><hr style="border-color:black"><br>
 
 
 
             <div style="font-size:xx-small;font-weight: normal">
              <div style="text-align:center;text-decoration:underline;font-weight:bold">Copyright</div>
-             <p>Stories are &copy; ARA Jamieson 2020.  MP3 versions are &copy; <a href="http://www.christopherjamieson.co.uk">CT Jamieson</a> 2020.
-                The music which forms part of the MP3s is &copy; <a href="http://www.racheljamieson.com">RA Jamieson</a>.
+             <p>Stories are &copy; ARA Jamieson 2020.  Audio versions are &copy; <a href="http://www.christopherjamieson.co.uk">CT Jamieson</a> 2020.
+                The music which forms part of the audio books is &copy; <a href="http://www.racheljamieson.com">RA Jamieson</a>.
                 Some of the colouring-in pictures in the activity sheets are &copy; <a href="http://www.etsy.com/uk/shop/LittlePaperTrails">Samantha Purkis.2020</a></p>
 
 
