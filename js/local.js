@@ -312,8 +312,10 @@ const C_Stories = [
              <p>You can download individual files by clicking on the various tiles on this web page.  Alternatively, click the links below to download complete collections.</p>
 
 	     <div style="text-align:center">
-               <a id="story-details-download-mp3"      download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="???"><i class="fa fa-headphones"></i> Audio</a>&nbsp;
-	       <a id="story-details-download-activity" download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="???"><i class="fa fa-download"></i> Activity</a><br>
+               <a id="story-details-download-mp3" href="https://www.breaker.audio/edgar-the-elephant-and-other-stories" target="_blank" rel="noopener noreferrer"><i class="fa fa-headphones"></i> Audio</a>&nbsp;
+	       <a id="story-details-download-activity" download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="resources/readMe/edgarTheElephantAndOtherStories_2020_05_22.zip">
+                 <i class="fa fa-download"></i> Activity
+               </a><br>
             </div><hr style="border-color:black">
 
 
