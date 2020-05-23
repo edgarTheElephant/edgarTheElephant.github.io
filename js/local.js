@@ -293,39 +293,46 @@ const C_Email_3 = ".co.uk";
 const C_Stories = [
     { fileName:"readMeFirst",
       header:"Before you start",
-      blurb:`<br><div style="text-align:center;text-decoration:underline;font-weight:bold">Welcome!</div>
-             <p>Gentle, timeless, calming stories for younger children.</p>
-             <p>Each story is available as a text file for you to read to your child, or as a professionally-voiced MP3 file which you can listen to online or download.
-                Each also comes with a downloadable activity sheet which contains teh text of the story, some things your child can do on their own, and some you can do with them.</p>
-             <p>We aim to continue adding new material, so make sure you visit this site regularly!</p><hr style="border-color:black">
+      blurb:`<br>
+             <div class="read-me-box">
+               <div class="read-me-title">Welcome!</div>
+               <p>Gentle, timeless, calming stories for younger children.</p>
+               <p>Each story is available as a text file for you to read to your child, or as a professionally-voiced MP3 file which you can listen to online or download.
+                  Each also comes with a downloadable activity sheet which contains the text of the story, some things your child can do on their own, and some you can do with them.</p>
+               <p>We aim to continue adding new material, so make sure you visit this site regularly!</p>
+             </div>
 
 
 
-             <div style="text-align:center;text-decoration:underline;font-weight:bold">Do I have to pay?</div>
-             <p>No &mdash; no payment is required.  If you&rsquo;d <i>like</i> to make a small donation, that&rsquo;s great &mdash; we appreciate it (click on the button in the footer of this page).
-                But you&rsquo;re welcome to use the material here without charge.<p>
-             <p>We don&rsquo;t use cookies either, and we don&rsquo;t carry third-party adverts.</p><hr style="border-color:black">
+             <div class="read-me-box">
+               <div class="read-me-title">Do I have to pay?</div>
+               <p>No &mdash; no payment is required.  If you&rsquo;d <i>like</i> to make a small donation, that&rsquo;s great &mdash; we appreciate it (click on the button in the footer of this page).
+                  But you&rsquo;re welcome to use the material here without charge.<p>
+               <p>We don&rsquo;t use cookies either, and we don&rsquo;t carry third-party adverts.</p>
+             </div>
 
 
 
-             <div style="text-align:center;text-decoration:underline;font-weight:bold">Downloading</div>
-             <p>You can download individual files by clicking on the various tiles on this web page.  Alternatively, click the links below to download complete collections.</p>
+             <div class="read-me-box">
+               <div class="read-me-title">Downloading</div>
+               <p>You can download individual files by clicking on the various tiles on this web page.  Alternatively, click the
+                  links below to find the complete collection of audio resources, and to download complete collection of activity sheets.</p>
 
-	     <div style="text-align:center">
-               <a id="story-details-download-mp3" href="https://www.breaker.audio/edgar-the-elephant-and-other-stories" target="_blank" rel="noopener noreferrer"><i class="fa fa-headphones"></i> Audio</a>&nbsp;
-	       <a id="story-details-download-activity" download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="resources/readMe/edgarTheElephantAndOtherStories_2020_05_22.zip">
-                 <i class="fa fa-download"></i> Activity
-               </a><br>
-            </div><hr style="border-color:black">
-
-
-
-             <div style="text-align:center;text-decoration:underline;font-weight:bold">Contact us</div>
-             <p>You can contact us at <a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}.</a></p><hr style="border-color:black"><br>
+  	       <div style="text-align:center">
+                 <a          class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="https://www.breaker.audio/edgar-the-elephant-and-other-stories"><i class="fa fa-headphones"></i> Audio</a>&nbsp;
+	         <a download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="resources/readMe/edgarTheElephantAndOtherStories_2020_05_22.zip"><i class="fa fa-download"></i> Booklets</a><br>
+              </div>
+            </div>
 
 
 
-            <div style="font-size:xx-small;font-weight: normal">
+             <div class="read-me-box">
+               <div class="read-me-title">Contact us</div>
+               <p>You can contact us at <a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}.</a></p>
+             </div>
+
+
+             <div class="read-me-box" style="font-size:xx-small;font-weight:bold">
              <div style="text-align:center;text-decoration:underline;font-weight:bold">Copyright</div>
              <p>Stories are &copy; ARA Jamieson 2020.  Audio versions are &copy; <a href="http://www.christopherjamieson.co.uk">CT Jamieson</a> 2020.
                 The music which forms part of the audio books is &copy; <a href="http://www.racheljamieson.com">RA Jamieson</a>.
@@ -574,9 +581,10 @@ function storyClick (caller, ix)
 	$("#story-details-buttons").hide();
     else
     {
-	$("#story-details-play-mp3")         .attr("src",  "resources/" + C_Stories[ix].fileName + "/" + C_Stories[ix].fileName + ".mp3");
-	$("#story-details-download-mp3")     .attr("href", "resources/" + C_Stories[ix].fileName + "/" + C_Stories[ix].fileName + ".mp3");
-	$("#story-details-download-activity").attr("href", "resources/" + C_Stories[ix].fileName + "/" + C_Stories[ix].fileName + ".pdf");
+	$("#story-details-play-mp3")        .attr("src",  "resources/" + C_Stories[ix].fileName + "/" + C_Stories[ix].fileName + ".mp3");
+	$("#story-details-download-mp3")    .attr("href", "resources/" + C_Stories[ix].fileName + "/" + C_Stories[ix].fileName + ".mp3");
+	$("#story-details-download-booklet").attr("href", "resources/" + C_Stories[ix].fileName + "/" + C_Stories[ix].fileName + ".pdf");
+	$("#story-details-read-booklet")    .attr("href", "resources/" + C_Stories[ix].fileName + "/" + C_Stories[ix].fileName + ".pdf");
 	$("#story-details-buttons").show();
     }
 
