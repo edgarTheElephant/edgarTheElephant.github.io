@@ -290,6 +290,9 @@ const C_Email_2 = "critos";
 const C_Email_3 = ".co.uk";
 const C_Email = `<a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}</a>`;
 
+const C_Advert = `Why not have a tailored audio book in which your child features &mdash; just £5 per story.  Email us at ${C_Email},
+                  giving the name of your child and the title of the story.`
+
 const C_Stories = [
     { fileName:"readMeFirst",
       header:"Before you start",
@@ -300,8 +303,7 @@ const C_Stories = [
                <p>Each story is available as a text file for you to read to your child, or as a professionally-voiced MP3 file which you can listen to online or download.
                   Each also comes with a downloadable activity sheet which contains the text of the story, some things your child can do on their own, and some you can do with them.</p>
                <p>We aim to continue adding new material, so make sure you visit this site regularly!</p><br>
-               <p style="font-weight:bold;color:yellow">Why not have a version of an audio book tailored with the name of your child?  The cost is just £5 per story.  Simply email us at ${C_Email},
-                  giving the name you wish us to use, and the title of the story.</p>
+               <p style="font-weight:bold;color:yellow">${C_Advert}</p>
              </div>
 
 
@@ -450,8 +452,8 @@ const C_Stories = [
 //    },
 //    
       { fileName:"moreToCome",
-        header:"More to come",
-        blurb:`Look out for more stories in future!`,
+        header:"More to come!",
+        blurb:`We will continue to add new stories, so make sure you come back here regularly!`,
         infoOnly: true
       }
 ];
@@ -590,6 +592,8 @@ function storyClick (caller, ix)
 	$("#story-details-read-booklet")    .attr("href", "resources/" + C_Stories[ix].fileName + "/" + C_Stories[ix].fileName + ".pdf");
 	$("#story-details-buttons").show();
     }
+
+    $("#story-details-advertising").html("<br><br>" + C_Advert);
 
     $("#story-details-modal-content").width($("#story-details-table").width() + 10);
 }
