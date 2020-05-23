@@ -47,6 +47,24 @@ body {
 }
 
 
+.read-me-box
+{
+    background:green;
+    border:1px solid black;
+    color:white;
+    margin-bottom:1em;
+    padding:1em;
+}
+
+
+.read-me-title
+{
+    font-weight:bold;
+    text-align:center;
+    text-decoration:underline;
+}
+
+
 .story-img {
     box-shadow: 10px 10px 30px black;
     max-height: 100%;
