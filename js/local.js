@@ -288,7 +288,7 @@ function displayElephant (ix)
 const C_Email_1 = "edgartheelephant";
 const C_Email_2 = "critos";
 const C_Email_3 = ".co.uk";
-
+const C_Email = `<a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}</a>`;
 
 const C_Stories = [
     { fileName:"readMeFirst",
@@ -299,16 +299,17 @@ const C_Stories = [
                <p>Gentle, timeless, calming stories for younger children.</p>
                <p>Each story is available as a text file for you to read to your child, or as a professionally-voiced MP3 file which you can listen to online or download.
                   Each also comes with a downloadable activity sheet which contains the text of the story, some things your child can do on their own, and some you can do with them.</p>
-               <p>We aim to continue adding new material, so make sure you visit this site regularly!</p>
+               <p>We aim to continue adding new material, so make sure you visit this site regularly!</p><br>
+               <p style="font-weight:bold;color:yellow">Why not have a version of an audio book tailored with the name of your child?  The cost is just £5 per story.  Simply email us at ${C_Email},
+                  giving the name you wish us to use, and the title of the story.</p>
              </div>
 
 
 
              <div class="read-me-box">
-               <div class="read-me-title">Do I have to pay?</div>
-               <p>No &mdash; no payment is required.  If you&rsquo;d <i>like</i> to make a small donation, that&rsquo;s great &mdash; we appreciate it (click on the button in the footer of this page).
-                  But you&rsquo;re welcome to use the material here without charge.<p>
-               <p>We don&rsquo;t use cookies either, and we don&rsquo;t carry third-party adverts.</p>
+               <div class="read-me-title">Do I have to pay to use the things here?</div>
+               <p>No &mdash; no payment is required.  If you&rsquo;d <i>like</i> to make a small donation, though,
+                  that&rsquo;s great &mdash; we appreciate it (click on the &lsquo;Donate&rsquo; button in the footer of this page).<p>
              </div>
 
 
@@ -330,7 +331,7 @@ const C_Stories = [
 
              <div class="read-me-box">
                <div class="read-me-title">Contact us</div>
-               <p>You can contact us at <a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}.</a></p>
+               <p>You can contact us at ${C_Email}.</p>
              </div>
 
 
