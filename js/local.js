@@ -578,9 +578,13 @@ function storyClick (caller, ix)
 {
     $("#story-details-modal").show();
     $("#story-details-header").html(C_Stories[ix].header);
-    $("#story-details-img").attr("src", "img/" + C_Stories[ix].fileName + ".jpg");
-    $("#story-details-img").prop("alt", C_Stories[ix].header);
     $("#story-details-blurb").html(C_Stories[ix].blurb);
+
+    if (C_Stories[ix].fileName != "readMeFirst")
+    {
+	$("#story-details-img").attr("src", "img/" + C_Stories[ix].fileName + ".jpg");
+	$("#story-details-img").prop("alt", C_Stories[ix].header);
+    }
 
     if (C_Stories[ix].infoOnly)
 	$("#story-details-buttons").hide();
