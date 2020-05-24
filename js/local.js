@@ -631,6 +631,14 @@ function storyClick (caller, ix)
 
 
 /******************************************************************************/
+function closeStoryModal ()
+{
+    document.getElementById('story-details-modal').style.display='none';
+    $("#story-details-play-mp3").trigger("pause");
+}
+
+
+/******************************************************************************/
 function storyMouseOut (caller, ix)
 {
     if (null === G_StoryAudio) return;
@@ -646,6 +654,6 @@ function storyMouseOver (caller, ix)
     var sound = C_Stories[ix].mouseOverSound;
     if (null === sound) return;
     G_StoryAudio = new Audio("audio/" + sound);
-    G_StoryAudio.volume = C_Stories[ix].recommendedVolume;
+    try { G_StoryAudio.volume = C_Stories[ix].recommendedVolume; } catch (e) { }
     G_StoryAudio.play();
 }
