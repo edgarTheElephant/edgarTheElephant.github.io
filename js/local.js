@@ -447,7 +447,7 @@ const C_Stories = [
       header:"The boy who caught the sun",
       blurb:`It was hot. Very, very, very hot. Everybody was getting very tired and thirsty and cross. So Jim decided to do something about it ...`,
       mouseOverSound:"cicadas.mp3",
-      recommendedVolume:1
+      recommendedVolume:0.7
     },
     
 //    { fileName:"maj",
@@ -482,7 +482,10 @@ const C_Stories = [
 /******************************************************************************/
 function displayStories ()
 {
-    const template = "<img class='story-img' src='$img$' alt='$header$' onclick='storyClick(this, $ix$)' onmouseover='storyMouseOver(this, $ix$)' onmouseout='storyMouseOut(this, $ix$)' ></img>";
+    var classes = "story-img";
+    if (!G_HaveTouchScreen) classes += " story-img-shake";
+    
+    const template = "<img class='" + classes + "' src='$img$' alt='$header$' onclick='storyClick(this, $ix$)' onmouseover='storyMouseOver(this, $ix$)' onmouseout='storyMouseOut(this, $ix$)' ></img>";
 
     for (var ix = 0; ix < C_Stories.length; ++ix)
     {    
