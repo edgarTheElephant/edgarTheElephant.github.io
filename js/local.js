@@ -1,6 +1,7 @@
 /********************************************************************************/
 var G_StoryAudio = null;
 var G_WantAnimation = true;
+var G_HaveTouchScreen = !window.matchMedia('(hover: hover)').matches;
 
 
 
@@ -22,6 +23,7 @@ var G_WantAnimation = true;
 
 function initialise ()
 {
+    if (G_HaveTouchScreen) $("#story-details-read-booklet").css("display", "none");
     // Deferred to doStart1, because we really want this only when
     // displaying the main screen.
     
@@ -125,8 +127,8 @@ var G_Sequence =
 
 /********************************************************************************/
 /* This operates in two significantly different ways, depending upon whether or
-   not the user has asked for animation (which we take as also imply that sounds
-   should be played.
+   not the user has asked for animation (which we take as also implying that
+   sounds should be played.
 
    If there is no animation, we simply call the given function, if it is defined.
 
@@ -288,10 +290,10 @@ function displayElephant (ix)
 const C_Email_1 = "edgartheelephant";
 const C_Email_2 = "critos";
 const C_Email_3 = ".co.uk";
-const C_Email = `<a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}</a>`;
+const C_Email   = `<a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}</a>`;
 
-const C_Advert = `Why not have a tailored audio book in which your child features &mdash; just £5 per story.  Email us at ${C_Email},
-                  giving the name of your child and the title of the story.`
+const C_Advert  = `Why not have a tailored audio book in which your child features &mdash; just £5 per story.  Email us at ${C_Email},
+                   giving the name of your child and the title of the story.`
 
 const C_Stories = [
     { fileName:"readMeFirst",
@@ -318,8 +320,10 @@ const C_Stories = [
 
              <div class="read-me-box">
                <div class="read-me-title">Downloading</div>
-               <p>You can download individual files by clicking on the various tiles on this web page.  Alternatively, click the
-                  links below to find the complete collection of audio resources, and to download complete collection of activity sheets.</p>
+               <p>Click on a tile on this webpage to see the details for that story.  This lets you download or listen to the audio book,
+                  and download or read online the associated activity booklet.</p>
+               <p>Alternatively, click the links below to listen to all of the audio files online, or to download a zip file containing
+                  all of the activity booklets.</p>
 
   	       <div style="text-align:center">
                  <a          class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="https://www.breaker.audio/edgar-the-elephant-and-other-stories"><i class="fa fa-headphones"></i> Audio</a>&nbsp;
@@ -344,7 +348,11 @@ const C_Stories = [
                 Some of the colouring-in pictures in the activity sheets are &copy; <a href="http://www.etsy.com/uk/shop/LittlePaperTrails">Samantha Purkis.2020</a></p>
 
 
-               <p><i class="fa fa-creative-commons" aria-hidden="true"></i> This work is licensed under CC BY-NC-ND 4.0. To view a copy of this licence, visit
+               <p><span style="font-size:medium"><i class="fab fa-creative-commons" aria-hidden="true"></i>
+                  <i class="fab fa-creative-commons-by" aria-hidden="true"></i>
+                  <i class="fab fa-creative-commons-nc" aria-hidden="true"></i>
+                  <i class="fab fa-creative-commons-nd" aria-hidden="true"></i> </span>
+                  This work is licensed under CC BY-NC-ND 4.0. To view a copy of this licence, visit
                   <a rel="noopener,noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank">https://creativecommons.org/licenses/by-nc-nd/4.0</a>.
                   In essence, this permits you to pass the various files on to other people if you wish, but you must not alter them, you must not use them commercially,
                   and you must not charge for them.  The licence also requires you to give an attribution for anything you pass on to other people.  However, all of the
@@ -382,73 +390,85 @@ const C_Stories = [
 //    { fileName:"pedroAndTheWaterMelon",
 //      header:"Pedro and the Water Melon",
 //      blurb:`Pedro and his brothers and sisters need new clothes. But their mummy doesn&rsquo;t have enough money. Then Pedro has an idea. A very good idea indeed.`,
-//      mouseOverSound:"pedro.mp3"
+//      mouseOverSound:"pedro.mp3",
+//      recommendedVolume:1
 //    },
 //    
 //    { fileName:"sarahAndTheRobbers",
 //      header:"Sarah and the Robbers",
 //      blurb:`Robbers are stealing all the farmers&rsquo; sweetcorn. Will Sarah be able to come to the rescue?`,
-//      mouseOverSound:"sarahAndTheRobbers.mp3"
+//      mouseOverSound:"sarahAndTheRobbers.mp3",
+//      recommendedVolume:1
 //    },
 //    
     { fileName:"elephantInTheGarden",
       header:"The elephant in the garden",
       blurb:`Claire is scared. She saw an elephant in the garden of her playschool and now she doesn&rsquo;t want to go. Enter Edgar, the friendly elephant, to save the day.`,
-      mouseOverSound:"elephant.mp3"
+      mouseOverSound:"elephant.mp3",
+      recommendedVolume:0.5
     },
     
 //    { fileName:"edgarToTheRescue",
 //      header:"Edgar to the rescue",
 //      blurb:`Claire has a good idea to help Mr Chowdhury when his car wash breaks down`,
-//      mouseOverSound:"elephant.mp3"
+//      mouseOverSound:"elephant.mp3",
+//      recommendedVolume:0.5
 //    },
 //    
     { fileName:"greatBigPyjamaSpot",
       header:"The great big pyjama spot",
       blurb:`The Prince of Slobodnia needs a very special pair of pyjamas.  But whatever has happened to the big pyjama spot?`,
-      mouseOverSound:"yawn.mp3"
+      mouseOverSound:"yawn.mp3",
+      recommendedVolume:0.2
     },
     
     { fileName:"carrotFactory",
       header:"The carrot factory",
       blurb:`Miss Davis works in a carrot factory &mdash; it&rsquo; her job to paint the carrots orange. One day she gets bored of orange, and carrots are never the same again.`,
-      mouseOverSound:"factory.mp3"
+      mouseOverSound:"factory.mp3",
+      recommendedVolume:1
     },
     
     { fileName:"giantEasterEgg",
       header:"The giant Easter egg",
       blurb:`The story of what happens when Mr Arkwright&rsquo;s Easter Egg machine goes wrong.`,
-      mouseOverSound:"factory.mp3"
+      mouseOverSound:"factory.mp3",
+      recommendedVolume:0.5
     },
     
     { fileName:"blackbirdWhoCouldntFly",
       header:"The blackbird who couldn&rsquo;t fly",
       blurb:`Bill is a blackbird. He$rsquo;s just like any other blackbird... except for one thing. He&rsquo;s afraid of heights. Then Bill&rsquo;s friend has an idea ...`,
-      mouseOverSound:"blackbirdMontage.mp3"
+      mouseOverSound:"blackbirdMontage.mp3",
+      recommendedVolume:1
     },
     
     { fileName:"boyWhoCaughtTheSun",
       header:"The boy who caught the sun",
       blurb:`It was hot. Very, very, very hot. Everybody was getting very tired and thirsty and cross. So Jim decided to do something about it ...`,
-      mouseOverSound:"cicadas.mp3"
+      mouseOverSound:"cicadas.mp3",
+      recommendedVolume:1
     },
     
 //    { fileName:"maj",
 //      header:"Maj",
 //      blurb:`Things aren&rsquo;t at all as Tracy expected when the Queen pops in to tea.`,
-//      mouseOverSound:"maj.mp3"
+//      mouseOverSound:"maj.mp3",
+//      recommendedVolume:1
 //    },
 //     
 //    { fileName:"granCalledEdie",
 //      header:"A gran called Edie",
 //      blurb:`Michael thinks granny&rsquo;d really boring.  But how wrong he is!`,
-//      mouseOverSound:"spitfire.mp3"
+//      mouseOverSound:"spitfire.mp3",
+//      recommendedVolume:1
 //    },
     
 //    { fileName:"greatFatherChristmasRobbery",
 //      header:"The great Father Christmas robbery",
 //      blurb:`What happens when a robber pretends to be Father Christmas`,
-//      mouseOverSound:"santa.mp3"
+//      mouseOverSound:"santa.mp3",
+//      recommendedVolume:1
 //    },
 //    
       { fileName:"moreToCome",
@@ -580,8 +600,11 @@ function storyClick (caller, ix)
     $("#story-details-header").html(C_Stories[ix].header);
     $("#story-details-blurb").html(C_Stories[ix].blurb);
 
-    if (C_Stories[ix].fileName != "readMeFirst")
+    if (C_Stories[ix].fileName == "readMeFirst")
+	$("#story-details-img").css("display", "none");
+    else
     {
+	$("#story-details-img").css("display", "block");
 	$("#story-details-img").attr("src", "img/" + C_Stories[ix].fileName + ".jpg");
 	$("#story-details-img").prop("alt", C_Stories[ix].header);
     }
@@ -597,7 +620,7 @@ function storyClick (caller, ix)
 	$("#story-details-buttons").show();
     }
 
-    $("#story-details-advertising").html("<br><br>" + C_Advert);
+    $("#story-details-advertising").html(C_Advert);
 
     $("#story-details-modal-content").width($("#story-details-table").width() + 10);
 }
@@ -615,8 +638,10 @@ function storyMouseOut (caller, ix)
 /******************************************************************************/
 function storyMouseOver (caller, ix)
 {
+    if (G_HaveTouchScreen) return;
     var sound = C_Stories[ix].mouseOverSound;
     if (null === sound) return;
     G_StoryAudio = new Audio("audio/" + sound);
+    G_StoryAudio.volume = C_Stories[ix].recommendedVolume;
     G_StoryAudio.play();
 }
