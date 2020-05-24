@@ -13,6 +13,12 @@
 #main-content
 {
     overflow-y: auto;
+/*
+    position: absolute;
+    left:0px;
+    top:0px;
+    z-index:-1;
+    margin-top:20em; */
 }
 
 
@@ -49,7 +55,7 @@ body {
 
 .read-me-box
 {
-    background:green;
+    background:darkgreen;
     border:1px solid black;
     color:white;
     margin-bottom:1em;
