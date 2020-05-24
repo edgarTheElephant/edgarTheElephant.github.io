@@ -472,8 +472,6 @@ const C_Stories = [
 //    },
 //    
       { fileName:"moreToCome",
-        header:"More to come!",
-        blurb:`We will continue to add new stories, so make sure you come back here regularly!`,
         infoOnly: true
       }
 ];
@@ -482,13 +480,16 @@ const C_Stories = [
 /******************************************************************************/
 function displayStories ()
 {
-    var classes = "story-img";
-    if (!G_HaveTouchScreen) classes += " story-img-shake";
-    
-    const template = "<img class='" + classes + "' src='$img$' alt='$header$' onclick='storyClick(this, $ix$)' onmouseover='storyMouseOver(this, $ix$)' onmouseout='storyMouseOut(this, $ix$)' ></img>";
-
     for (var ix = 0; ix < C_Stories.length; ++ix)
     {    
+	var clickable = null != C_Stories[ix].blurb;
+	var classes = "story-img";
+	if (!G_HaveTouchScreen && clickable) classes += " story-img-shake";
+
+    	var template = "<img class='" + classes + "' src='$img$' alt='$header$'";
+	if (clickable) template += "onclick='storyClick(this, $ix$)' onmouseover='storyMouseOver(this, $ix$)' onmouseout='storyMouseOut(this, $ix$)' style='cursor:pointer'";
+	template += "></img>";
+	
 	var s = template.replace("$img$", "img/" + C_Stories[ix].fileName + ".jpg");
 	s = s.replace(/\$ix\$/g, ix.toString());
 	s = s.replace(/\$header\$/g, C_Stories[ix].header);
