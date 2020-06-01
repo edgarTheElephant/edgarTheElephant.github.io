@@ -424,7 +424,7 @@ const C_Stories = [
     
     { fileName:"carrotFactory",
       header:"The carrot factory",
-      blurb:`Miss Davis works in a carrot factory &mdash; it&rsquo; her job to paint the carrots orange. One day she gets bored of orange, and carrots are never the same again.`,
+      blurb:`Miss Davis works in a carrot factory &mdash; it&rsquo;s her job to paint the carrots orange. One day she gets bored of orange, and carrots are never the same again.`,
       mouseOverSound:"factory.mp3",
       recommendedVolume:1
     },
