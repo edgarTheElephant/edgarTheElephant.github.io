@@ -298,13 +298,20 @@ const C_Advert  = `Why not have a tailored audio book in which your child featur
 const C_Stories = [
     { fileName:"readMeFirst",
       header:"Before you start",
-      blurb:`<br>
-             <div class="read-me-box">
+      blurb:`<div class="read-me-box">
                <div class="read-me-title">Welcome!</div>
                <p>Gentle, timeless, calming stories for younger children.</p>
-               <p>Each story is available as a text file for you to read to your child, or as a professionally-voiced MP3 file which you can listen to online or download.
-                  Each also comes with a downloadable activity sheet which contains the text of the story, some things your child can do on their own, and some you can do with them.</p>
+
+               <p>Each story is available as a professionally-voiced
+                  MP3 file which you can listen to online or download.
+                  Each also comes with a downloadable activity sheet
+                  which contains the text of the story (so you can
+                  read it to your child yourself if you prefer), some
+                  things your child can do on their own, and some you
+                  can do with them.</p>
+
                <p>We aim to continue adding new material, so make sure you visit this site regularly!</p><br>
+
                <p style="font-weight:bold;color:yellow">${C_Advert}</p>
              </div>
 
