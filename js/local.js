@@ -352,7 +352,7 @@ const C_Stories = [
              <div style="text-align:center;text-decoration:underline;font-weight:bold">Copyright</div>
              <p>Stories are &copy; ARA Jamieson 2020.  Audio versions are &copy; <a href="http://www.christopherjamieson.co.uk">CT Jamieson</a> 2020.
                 The music which forms part of the audio books is &copy; <a href="http://www.racheljamieson.com">RA Jamieson</a>.
-                Some of the colouring-in pictures in the activity sheets are &copy; <a href="http://www.etsy.com/uk/shop/LittlePaperTrails">Samantha Purkis.2020</a></p>
+                Some of the colouring-in pictures in the activity sheets are &copy; <a href="http://www.etsy.com/uk/shop/LittlePaperTrails">Samantha Purkis 2020</a>.</p>
 
 
                <p><span style="font-size:medium"><i class="fab fa-creative-commons" aria-hidden="true"></i>
@@ -471,16 +471,16 @@ const C_Stories = [
 //      recommendedVolume:1
 //    },
     
-//    { fileName:"greatFatherChristmasRobbery",
-//      header:"The great Father Christmas robbery",
-//      blurb:`What happens when a robber pretends to be Father Christmas`,
-//      mouseOverSound:"santa.mp3",
-//      recommendedVolume:1
-//    },
-//    
-      { fileName:"moreToCome",
-        infoOnly: true
-      }
+    { fileName:"greatFatherChristmasRobbery",
+      header:"The great Father Christmas robbery",
+      blurb:`What happens when a robber pretends to be Father Christmas`,
+      mouseOverSound:"santa.mp3",
+      recommendedVolume:1
+    },
+    
+    { fileName:"moreToCome",
+      infoOnly: true
+    }
 ];
 
 
