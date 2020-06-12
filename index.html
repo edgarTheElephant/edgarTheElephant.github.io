@@ -119,7 +119,7 @@
       <div class="w3-rest" style="vertical-align:middle">
 	<a href="https://www.facebook.com/EdgarAndStories/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square" aria-hidden="true" style="font-size:x-large;" title="Facebook"></i></a>&nbsp;&nbsp;
 	<a href="https://www.instagram.com/edgar_and_stories/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true" style="font-size:x-large" title="Instagram"></i></a>&nbsp;&nbsp;
-	We don&rsquo;t charge &mdash; but if you&rsquo;d <i>like</i> to make a donation, we won&rsquo;t say no! &nbsp;
+	We don&rsquo;t charge &mdash; but if you&rsquo;d like to make a donation, we won&rsquo;t say no! &nbsp;
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:inline">
 	  <input type="hidden" name="cmd" value="_s-xclick" />
 	  <input type="hidden" name="hosted_button_id" value="TG9TFU645EYVW" />
@@ -154,22 +154,24 @@
   <!-- ********************************************************************* -->
   <!-- Story details. -->
 
-  <div id="story-details-modal" class="w3-modal" style="display:none">
+  <div id="story-details-modal" class="w3-modal" style="display:none;">
     <div id="story-details-modal-content" class="w3-modal-content w3-card-4 w3-animate-opacity" style="color:black;background:#80FF80; border:2px solid white;">
       <header class="w3-container" style="background:green;border-bottom:1px solid white;"> 
 	<span onclick="closeStoryModal()" class="w3-button w3-display-topright" style="color:white;border:0;font-weight:bold;font-size:large">&times;</span>
 	<h2 id="story-details-header">???</h2>
       </header>
-      <br><img id="story-details-img" style="height:30vh;padding-left:1em;padding-right:1em;display:block;margin-left:auto;margin-right:auto;"><br>
-      <div id="story-details-blurb" style="padding-left:1em;padding-right:1em"></div>
-      <div id="story-details-buttons" style="text-align:center">
-	<br>
-	<audio id="story-details-play-mp3" controls></audio><br>
-	<a id="story-details-download-mp3"     download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer"><i class="fa fa-download"    ></i> Audio</a>
-	<a id="story-details-download-booklet" download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer"><i class="fa fa-download"    ></i> Booklet</a>
-	<a id="story-details-read-booklet"              class="w3-btn w3-green" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-reader"></i> Booklet</a>
-	<br>
-	<div id="story-details-advertising" style="text-align:left;font-weight:bold;background:green;color:yellow;margin-top:2em;padding:1em"></div>
+      <div style="max-height:70vh;overflow-y:auto">
+	<br><img id="story-details-img" style="height:30vh;padding-left:1em;padding-right:1em;display:block;margin-left:auto;margin-right:auto;"><br>
+	<div id="story-details-blurb" style="padding-left:1em;padding-right:1em"></div>
+	<div id="story-details-buttons" style="text-align:center">
+	  <br>
+	  <audio id="story-details-play-mp3" controls></audio><br>
+	  <a id="story-details-download-mp3"     download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer"><i class="fa fa-download"    ></i> Audio</a>
+	  <a id="story-details-download-booklet" download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer"><i class="fa fa-download"    ></i> Booklet</a>
+	  <a id="story-details-read-booklet"              class="w3-btn w3-green" target="_blank" rel="noopener noreferrer"><i class="fas fa-book-reader"></i> Booklet</a>
+	  <br>
+	  <div id="story-details-advertising" style="text-align:left;font-weight:bold;background:green;color:yellow;margin-top:2em;padding:1em"></div>
+	</div>
       </div>
     </div>
   </div>
