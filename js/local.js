@@ -292,8 +292,44 @@ const C_Email_2 = "critos";
 const C_Email_3 = ".co.uk";
 const C_Email   = `<a href="mailto:${C_Email_1}@${C_Email_2}${C_Email_3}">${C_Email_1}@${C_Email_2}${C_Email_3}</a>`;
 
-const C_Advert  = `Why not have a tailored audio book in which your child features &mdash; just £5 per story.  Email us at ${C_Email},
-                   giving the name of your child and the title of the story.`
+const C_Advert  =
+  `<div class="read-me-box" style="border:solid 1px black;padding:4px;background:dodgerBlue;font-weight:bold;color:yellow;display:flex;align-items:center">
+     <div class="w3-container">
+       <div class="w3-row">
+         <div class="w3-rest">
+           <br><img id="ad-picture-child-picture" src="./img/childsPainting.jpg" style="display:block;margin:0 auto;width:100px;box-shadow: 10px 10px 10px black;border:solid 2px black;"><br>
+         </div>
+       </div>
+
+       <div class="w3-row">
+         <div class="w3-rest">
+           We&rsquo;d love to include your children&rsquo;s artwork in our Facebook gallery.  Send a picture of their artwork, along with their first name, to ${C_Email}, and
+                                       get a personalised email from Edgar in return!
+
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="read-me-box" style="border:solid 1px black;padding:4px;background:red;font-weight:bold;color:yellow;display:flex;align-items:center">
+     <div class="w3-container">
+       <div class="w3-row">
+         <div class="w3-rest">
+           <img id="ad-picture-child-star" src="./img/hero.png" style="display:block;margin:0 auto;width:200px;">
+         </div>
+       </div>
+
+       <div class="w3-row">
+         <div class="w3-rest">
+           <p style="text-align:center;font-size:large">Make your child the star!</p>
+                                         Why not let us send you an audio file of one of the stories here, tailored with the name of your child,
+                                         so that they become the hero?  Just £5 per story.  Email us at ${C_Email}, giving the name of your child and
+                                         the story title.</p>
+</div>
+         </div>
+       </div>
+     </div>
+   </div>`;
 
 const C_Stories = [
     { fileName:"readMeFirst",
@@ -310,17 +346,16 @@ const C_Stories = [
                   things your child can do on their own, and some you
                   can do with them.</p>
 
-               <p>We aim to continue adding new material, so make sure you visit this site regularly!</p><br>
-
-               <p style="font-weight:bold;color:yellow">${C_Advert}</p>
+               <p>We aim to continue adding new material, so make sure you visit this site regularly!</p>
              </div>
 
-
+             ${C_Advert}
 
              <div class="read-me-box">
                <div class="read-me-title">Do I have to pay to use the things here?</div>
-               <p>No &mdash; no payment is required.  If you&rsquo;d <i>like</i> to make a small donation, though,
-                  that&rsquo;s great &mdash; we appreciate it (click on the &lsquo;Donate&rsquo; button in the footer of this page).<p>
+               <p>No &mdash; these stories, audios and pictures are available free of charge.  If you&rsquo;d
+                  like to make a donation, though, we certainly won&rsquo;t say no!
+                  (Click on the &lsquo;Donate&rsquo; button in the footer of this page).<p>
              </div>
 
 
@@ -344,7 +379,7 @@ const C_Stories = [
 
              <div class="read-me-box">
                <div class="read-me-title">Contact us</div>
-               <p>You can contact us at ${C_Email}.</p>
+               <p>You can contact us at ${C_Email}.  Also find us on Facebook: <a href="https://www.facebook.com/EdgarAndStories/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square" aria-hidden="true" style="font-size:x-large;" title="Facebook"></i></a>&nbsp;&nbsp; and Instagram: <a href="https://www.instagram.com/edgar_and_stories/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true" style="font-size:x-large" title="Instagram"></i></a>.</p>
              </div>
 
 
@@ -391,6 +426,7 @@ const C_Stories = [
                  Sun: Image by <a rel="noopener noreferrer" target="_blank" href="https://pixabay.com/users/OpenClipart-Vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=161923">OpenClipart-Vectors</a> from <a rel="noopener noreferrer" target="_blank" href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=161923">Pixabay</a>
             </div>
           </div>`,
+      mouseOverSound: null,
       infoOnly: true
     },
     
@@ -408,6 +444,13 @@ const C_Stories = [
 //      recommendedVolume:1
 //    },
 //    
+    { fileName:"greatFatherChristmasRobbery",
+      header:"The great Father Christmas robbery",
+      blurb:`What happens when a robber pretends to be Father Christmas.`,
+      mouseOverSound:"santa.mp3",
+      recommendedVolume:1
+    },
+    
     { fileName:"elephantInTheGarden",
       header:"The elephant in the garden",
       blurb:`Claire is scared. She saw an elephant in the garden of her playschool and now she doesn&rsquo;t want to go. Enter Edgar, the friendly elephant, to save the day.`,
@@ -471,13 +514,6 @@ const C_Stories = [
 //      recommendedVolume:1
 //    },
     
-    { fileName:"greatFatherChristmasRobbery",
-      header:"The great Father Christmas robbery",
-      blurb:`What happens when a robber pretends to be Father Christmas`,
-      mouseOverSound:"santa.mp3",
-      recommendedVolume:1
-    },
-    
     { fileName:"moreToCome",
       infoOnly: true
     }
@@ -488,7 +524,7 @@ const C_Stories = [
 function displayStories ()
 {
     for (var ix = 0; ix < C_Stories.length; ++ix)
-    {    
+    {
 	var clickable = null != C_Stories[ix].blurb;
 	var classes = "story-img";
 	if (!G_HaveTouchScreen && clickable) classes += " story-img-shake";
