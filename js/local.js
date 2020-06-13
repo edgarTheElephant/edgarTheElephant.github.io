@@ -369,7 +369,7 @@ const C_Stories = [
 
   	       <div style="text-align:center">
                  <a          class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="https://www.breaker.audio/edgar-the-elephant-and-other-stories"><i class="fa fa-headphones"></i> Audio</a>&nbsp;
-	         <a download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="resources/readMe/edgarTheElephantAndOtherStories_2020_05_22.zip">
+	         <a download class="w3-btn w3-green" target="_blank" rel="noopener noreferrer" href="resources/readMe/edgarTheElephantAndOtherStories_2020_06_13.zip">
                   <i class="fa fa-download"></i> <i class="fas fa-book-reader"></i> Booklets
                  </a><br>
               </div>
