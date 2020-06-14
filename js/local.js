@@ -1,7 +1,87 @@
 /********************************************************************************/
+/*
+  A note on audio
+
+  By way of summary of how things are _supposed_ to work with sound and
+  animation turned on ...
+
+  The elephant on the front screen shrinks, along with a shrinking sound.  The
+  title bar of the second screen then appears successively, with a popping
+  sound against each element, followed by 'ta-da', and then the main body of
+  the page appears.  On the main body, a mouseover event on each tile causes
+  a sound-effect to be played.
+
+  This works fine on Windows (or at least, it does in Chrome and Firefox,
+  which are the only two I've tried).
+
+  It also works on Android (except that I've had to disable the mouseover
+  proceassing, because on tablets and mobiles there is no direct equivalent
+  of mouseover; if not disabled, mouseclick is taken as being the same thing,
+  and then the sound effects become intrusive).
+
+  And then we came to iPhone ...
+
+  The original implementation involved placing three audio tags in the HTML
+  (elephant-shrink, pop and ta-da), and then playing them under Javascript
+  control, with each new stage in the animation being kicked off by the
+  ending of the sound effect associated with the previous one.
+
+  With this implementation, the shrink sound played ok, but after that things
+  ground to a halt following the first stage of the animation, because no
+  other sound was actually played, and therefore the completion of a sound
+  could not be used to kick off the next stage.
+
+  A website suggested this was pretty much par for the course (one of
+  the issues being that apparently Apple (or certainly iPhone)
+  disables spontaneous playing of sounds to avoid users having to pay
+  for the bandwidth, relying upon users clicking things to indicate
+  they're happy for the sound to be downloaded).
+
+  The website suggested creating a Javascript audio object in response to
+  an initial button-click (in our case, in response to clicking on one of
+  the buttons on the front screen), and then setting the source of this
+  as appropriate each time and then using the play method.
+
+  This worked, but was horrendously slow -- there appeared to be a huge
+  amount of latency before each sound was played, and also sounds were
+  not cached, so the pop sounds (which is used a lot) was downloaded
+  each time it was needed.
+
+  It then occurred to me that perhaps rather than create a Javascript
+  Audio object, I could instead create an HTML audio tag (much like
+  the original implementation, but this time creating the tag from
+  code, rather than hard-coding it in the HTML).  This worked in so
+  far as the animation now ran to completion, and the pop was downloaded
+  only once.  However, the pop sound now only actually _sounded_ once.
+
+  At this point, I gave up -- there seemed little point in introducing the
+  extra complexity described above when it was either going to slow down
+  the rendering singificantly, or else wasn't really going to work.  So
+  instead, I now look for stuff running on Mac OS or iPhone and disable
+  the sound processing.
+
+  One other issue -- as mentioned above, there seems to be a lot of
+  latency on downloading sounds on iPhone / Mac.  As things now stand,
+  this is academic, because I'm not using any (other than elephant-shrink).
+  However, one website suggested that for reasons no one can really fathom,
+  adding the G_AudioContext details below fixed that.  I'm not sure either
+  way, but it doesn't seem to have an adverse impact on anything else so
+  far as I can see, so I've opted to include it in case I ever do find a
+  way of handling sounds properly on iPhone.
+
+  (It turns out that there is no reason to worry about special processing
+  on Macbook; I am still to discover what iPad does.)
+*/
+
+/********************************************************************************/
+var G_HaveTouchScreen = !window.matchMedia('(hover: hover)').matches;
+var G_IsApple = -1 != navigator.appVersion.toLowerCase().indexOf("iphone") || -1 != navigator.appVersion.toLowerCase().indexOf("ipad") || -1 != navigator.appVersion.toLowerCase().indexOf("ipod");
 var G_StoryAudio = null;
 var G_WantAnimation = true;
-var G_HaveTouchScreen = !window.matchMedia('(hover: hover)').matches;
+
+const G_AudioContextClass = window.AudioContext || window.webkitAudioContext; // See head-of-file comments.
+const G_AudioContext = new G_AudioContextClass();
+
 
 
 
@@ -23,6 +103,17 @@ var G_HaveTouchScreen = !window.matchMedia('(hover: hover)').matches;
 
 function initialise ()
 {
+    //var txt = "";
+    //txt += "Browser CodeName: " + navigator.appCodeName + "; ";
+    //txt += "Browser Name: " + navigator.appName + "; ";
+    //txt += "Browser Version: " + navigator.appVersion + "; ";
+    //txt += "Cookies Enabled: " + navigator.cookieEnabled + "; ";
+    //txt += "Browser Language: " + navigator.language + "; ";
+    //txt += "Browser Online: " + navigator.onLine + "; ";
+    //txt += "Platform: " + navigator.platform + "; ";
+    //txt += "User-agent header: " + navigator.userAgent + ".";
+    //alert(txt);
+    
     if (G_HaveTouchScreen) $("#story-details-read-booklet").css("display", "none");
     // Deferred to doStart1, because we really want this only when
     // displaying the main screen.
@@ -139,7 +230,7 @@ var G_Sequence =
 
 function doPlay (audio, fn)
 {
-    if (G_WantAnimation)
+    if (G_WantAnimation && null != audio)
     {
 	if (null !== fn) audio.onended = fn;
 	audio.play();
@@ -191,7 +282,7 @@ function runElementWithAudio (fn, audio, ix, finishedFn)
 function runElementWithoutAudio (fn, ix, finishedFn)
 {
     if (fn(ix))
-	doPlay(audio, function () { runElementWithoutAudio(fn, audio, ix + 1, finishedFn); });
+	doPlay(null, function () { runElementWithoutAudio(fn, ix + 1, finishedFn); });
     else
 	finishedFn();
 }
@@ -227,13 +318,23 @@ function runSequence1 (ix)
 				      doSetTimeout(element.pause, resolver);
 
 				  else if (element.arrayFn && element.audio)
-				      runElementWithAudio(element.arrayFn, document.getElementById(element.audio), 0, resolver);
+				  {
+				      if (G_IsApple)
+					  runElementWithoutAudio(element.arrayFn, 0, resolver);
+				      else
+					  runElementWithAudio(element.arrayFn, document.getElementById(element.audio), 0, resolver);
+				  }
 				  
 				  else if (element.arrayFn)
 				      runElementWithoutAudio(element.arrayFn, 0, resolver);
 				  
 				  else if (element.audio)
-				      runElementWithAudio(dummyFunctionForAudio, document.getElementById(element.audio), 0, resolver);
+				  {
+				      if (G_IsApple)
+					  runElementWithoutAudio(dummyFunctionForAudio, 0, resolver);
+				      else
+					  runElementWithAudio(dummyFunctionForAudio, document.getElementById(element.audio), 0, resolver);
+				  }
 
 				  else if (element.justDoIt)
 				  {
@@ -243,7 +344,7 @@ function runSequence1 (ix)
 			      });
 
     var nextFn = function (x) { runSequence1(ix + 1); };
-    promise.then(result => nextFn(result), error => alert("Oops"));
+    promise.then(result => nextFn(result), error => alert(error));
 }
 
 
