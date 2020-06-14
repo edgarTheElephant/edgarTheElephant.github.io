@@ -71,11 +71,35 @@
 
   (It turns out that there is no reason to worry about special processing
   on Macbook; I am still to discover what iPad does.)
+
+
+  Safari on iPad:
+    Browser CodeName: Mozilla; Browser Name: Netscape;
+    Browser Version: 5.0 (Macintosh; Intel Mac OS X 10_15_4)
+    AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1
+    Safari/605.1.15; Cookies Enabled: true; Browser Language: en-gb;
+    Browser Online: true; Platform: MacIntel; User-agent header:
+    Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4)
+    AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1
+    Safari/605.1.15.
+
+  On MacBook, there is no issue -- things work the same way as for
+  everything else.  On iPhone and iPad, however, there seem to be
+  problems.
+
+  Unfortunately, while the information available from the navigator
+  object for iPhone does actually mention iPhone, on iPad it does not
+  mention iPad.  The best I can do is search for 'mac'.  Unfortunately,
+  this will also mean that we can't do anything with sound on Macbook,
+  even though things work there (in fact, possibly I could do better if
+  the information includes reference to Macbook, but I don't have one to
+  experiment on).  In view of this, I'll just have to disable the sound
+  altogether on any mac platform.
 */
 
 /********************************************************************************/
 var G_HaveTouchScreen = !window.matchMedia('(hover: hover)').matches;
-var G_IsApple = -1 != navigator.appVersion.toLowerCase().indexOf("iphone") || -1 != navigator.appVersion.toLowerCase().indexOf("ipad") || -1 != navigator.appVersion.toLowerCase().indexOf("ipod");
+var G_IsApple = -1 != navigator.appVersion.toLowerCase().indexOf("mac");
 var G_StoryAudio = null;
 var G_WantAnimation = true;
 
