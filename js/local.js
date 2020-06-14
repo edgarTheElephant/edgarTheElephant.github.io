@@ -112,7 +112,7 @@ function initialise ()
     //txt += "Browser Online: " + navigator.onLine + "; ";
     //txt += "Platform: " + navigator.platform + "; ";
     //txt += "User-agent header: " + navigator.userAgent + ".";
-    alert(G_IsApple);
+    //alert(G_IsApple);
     
     if (G_HaveTouchScreen) $("#story-details-read-booklet").css("display", "none");
     // Deferred to doStart1, because we really want this only when
