@@ -103,16 +103,16 @@ const G_AudioContext = new G_AudioContextClass();
 
 function initialise ()
 {
-    var txt = "";
-    txt += "Browser CodeName: " + navigator.appCodeName + "; ";
-    txt += "Browser Name: " + navigator.appName + "; ";
-    txt += "Browser Version: " + navigator.appVersion + "; ";
-    txt += "Cookies Enabled: " + navigator.cookieEnabled + "; ";
-    txt += "Browser Language: " + navigator.language + "; ";
-    txt += "Browser Online: " + navigator.onLine + "; ";
-    txt += "Platform: " + navigator.platform + "; ";
-    txt += "User-agent header: " + navigator.userAgent + ".";
-    alert(txt);
+    //var txt = "";
+    //txt += "Browser CodeName: " + navigator.appCodeName + "; ";
+    //txt += "Browser Name: " + navigator.appName + "; ";
+    //txt += "Browser Version: " + navigator.appVersion + "; ";
+    //txt += "Cookies Enabled: " + navigator.cookieEnabled + "; ";
+    //txt += "Browser Language: " + navigator.language + "; ";
+    //txt += "Browser Online: " + navigator.onLine + "; ";
+    //txt += "Platform: " + navigator.platform + "; ";
+    //txt += "User-agent header: " + navigator.userAgent + ".";
+    //alert(txt);
     
     if (G_HaveTouchScreen) $("#story-details-read-booklet").css("display", "none");
     // Deferred to doStart1, because we really want this only when
