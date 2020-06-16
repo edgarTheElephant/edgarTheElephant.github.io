@@ -428,9 +428,9 @@ const C_Advert  =
 
        <div class="w3-row">
          <div class="w3-rest">
+           <p style="text-align:center;font-size:large">Artwork</p>
            We&rsquo;d love to include your children&rsquo;s artwork in our Facebook gallery.  Send a picture of their artwork, along with their first name, to ${C_Email}, and
-                                       get a personalised email from Edgar in return!
-
+           get a personalised email from Edgar in return!
          </div>
        </div>
      </div>
@@ -447,10 +447,9 @@ const C_Advert  =
        <div class="w3-row">
          <div class="w3-rest">
            <p style="text-align:center;font-size:large">Make your child the star!</p>
-                                         Why not let us send you an audio file of one of the stories here, tailored with the name of your child,
-                                         so that they become the hero?  Just £5 per story.  Email us at ${C_Email}, giving the name of your child and
-                                         the story title.</p>
-</div>
+           Why not let us send you an audio file of one of the stories here, tailored with the name of your child,
+           so that they become the hero?  Just £5 per story.  Email us at ${C_Email}, giving the name of your child and
+          the story title.
          </div>
        </div>
      </div>
@@ -471,7 +470,22 @@ const C_Stories = [
                   things your child can do on their own, and some you
                   can do with them.</p>
 
-               <p>We aim to continue adding new material, so make sure you visit this site regularly!</p>
+               <p>We aim to continue adding new material, so make sure you come back to this site regularly, and also follow us on ...</p>
+               <p style="margin-left:2em">
+                 Facebook:
+                 <a href="https://www.facebook.com/EdgarAndStories/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;font-weight:bold">
+                   <i class="fab fa-facebook-square" aria-hidden="true" style="font-size:x-large;" title="Facebook">&nbsp;</i>
+                   @EdgarAndStories
+                 </a>
+               </p>
+
+               <p style="margin-left:2em">
+                 Instagram:
+                 <a href="https://www.instagram.com/edgar_and_stories/" target="_blank" rel="noopener noreferrer" style="text-decoration:none;font-weight:bold">
+                   <i class="fab fa-instagram" aria-hidden="true" style="font-size:x-large" title="Instagram">&nbsp;</i>
+                   @edgar_and_stories
+                 </a>
+               </p>
              </div>
 
              ${C_Advert}
@@ -479,8 +493,16 @@ const C_Stories = [
              <div class="read-me-box">
                <div class="read-me-title">Do I have to pay to use the things here?</div>
                <p>No &mdash; these stories, audios and pictures are available free of charge.  If you&rsquo;d
-                  like to make a donation, though, we certainly won&rsquo;t say no!
-                  (Click on the &lsquo;Donate&rsquo; button in the footer of this page).<p>
+                  like to make a donation, though, we certainly won&rsquo;t say no!<p>
+               <div style="display:block;text-align:center">
+                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:inline">
+                   <input type="hidden" name="cmd" value="_s-xclick" />
+	           <input type="hidden" name="hosted_button_id" value="TG9TFU645EYVW" />
+	           <input type="image" style="vertical-align:middle" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit"
+                          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+	           <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+                 </form>
+               </div>
              </div>
 
 
@@ -506,7 +528,6 @@ const C_Stories = [
                <div class="read-me-title">Contact us</div>
                <p>You can contact us at ${C_Email}.  Also find us on Facebook: <a href="https://www.facebook.com/EdgarAndStories/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square" aria-hidden="true" style="font-size:x-large;" title="Facebook"></i></a>&nbsp;&nbsp; and Instagram: <a href="https://www.instagram.com/edgar_and_stories/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true" style="font-size:x-large" title="Instagram"></i></a>.</p>
              </div>
-
 
              <div class="read-me-box" style="font-size:xx-small;font-weight:bold">
              <div style="text-align:center;text-decoration:underline;font-weight:bold">Copyright</div>
@@ -795,6 +816,7 @@ function storyClick (caller, ix)
     $("#story-details-advertising").html(C_Advert);
 
     $("#story-details-modal-content").width($("#story-details-table").width() + 10);
+    $("#story-details-all").scrollTop(0);
 }
 
 
