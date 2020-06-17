@@ -531,9 +531,9 @@ const C_Stories = [
 
              <div class="read-me-box" style="font-size:xx-small;font-weight:bold">
              <div style="text-align:center;text-decoration:underline;font-weight:bold">Copyright</div>
-             <p>Stories are &copy; ARA Jamieson 2020.  Audio versions are &copy; <a href="http://www.christopherjamieson.co.uk">CT Jamieson</a> 2020.
-                The music which forms part of the audio books is &copy; <a href="http://www.racheljamieson.com">RA Jamieson</a>.
-                Some of the colouring-in pictures in the activity sheets are &copy; <a href="http://www.etsy.com/uk/shop/LittlePaperTrails">Samantha Purkis 2020</a>.</p>
+             <p>Stories are &copy; ARA Jamieson 2020.  Audio versions are &copy; <a href="https://christopherjamieson.co.uk" target="_blank" rel="noopener noreferrer">Christopher Jamieson</a> 2020.
+                The music which forms part of the audio books is &copy; <a href="https://www.racheljamieson.com" target="_blank" rel="noopener noreferrer">Rachel Jamieson</a>.
+                Some of the colouring-in pictures in the activity sheets are &copy; <a href="#" target="_blank" rel="noopener noreferrer">Samantha Purkis 2020</a>.</p>
 
 
                <p><span style="font-size:medium"><i class="fab fa-creative-commons" aria-hidden="true"></i>
@@ -541,7 +541,7 @@ const C_Stories = [
                   <i class="fab fa-creative-commons-nc" aria-hidden="true"></i>
                   <i class="fab fa-creative-commons-nd" aria-hidden="true"></i> </span>
                   This work is licensed under CC BY-NC-ND 4.0. To view a copy of this licence, visit
-                  <a rel="noopener,noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank">https://creativecommons.org/licenses/by-nc-nd/4.0</a>.
+                  <a rel="noopener,noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-nc-nd/4.0</a>.
                   In essence, this permits you to pass the various files on to other people if you wish, but you must not alter them, you must not use them commercially,
                   and you must not charge for them.  The licence also requires you to give an attribution for anything you pass on to other people.  However, all of the
                    material contains attributions, so there is nothing you need to do in that respect.</p><br><br>
@@ -552,7 +552,7 @@ const C_Stories = [
                  Shrinking elephant sound: Audio Assets by Chris Butler.<br style="padding-bottom:0.5em">
                  Aeroplane: By <a rel="noopener noreferrer" target="_blank" href="https://freesound.org/people/mattew/">Mattew</a>.
                                <a rel="noopener noreferrer" target="_blank" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Licence Attribution 3.0 Unported (CC BY 3.0)</a>.<br style="padding-bottom:0.5em">
-                 Blackbird boing: <a rel="noopener,noreferrer" href='http://www.tunepocket.com' target='_blank'>TunePocket</a><br style="padding-bottom:0.5em">
+                 Blackbird boing: <a rel="noopener,noreferrer" href='https://www.tunepocket.com' target='_blank'>TunePocket</a><br style="padding-bottom:0.5em">
                  Sombrero: Image by <a rel="noopener noreferrer" target="_blank" href="https://pixabay.com/users/Clker-Free-Vector-Images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=26735">Clker-Free-Vector-Images</a> from <a rel="noopener noreferrer" target="_blank" href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=26735">Pixabay</a><br style="padding-bottom:0.5em">
                  Elephant (stylised): Image by <a rel="noopener noreferrer" target="_blank" href="https://pixabay.com/users/Clker-Free-Vector-Images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=305080">Clker-Free-Vector-Images</a> from <a rel="noopener noreferrer" target="_blank" href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=305080">Pixabay</a><br style="padding-bottom:0.5em">
                  Bucket and sponge: Image by <a rel="noopener noreferrer" target="_blank" href="https://pixabay.com/users/Clker-Free-Vector-Images-3736/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=309439">Clker-Free-Vector-Images</a> from <a rel="noopener noreferrer" target="_blank" href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=309439">Pixabay</a><br style="padding-bottom:0.5em">
