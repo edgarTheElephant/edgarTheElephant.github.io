@@ -704,7 +704,7 @@ function displayBottomOfScreen ()
 function displayTitle (finishedFn)
 {
     $("#title-svg").attr("visibility", "visible");
-    new Vivus("title-svg", { duration: getTimeout(299) + 1 }, finishedFn);
+    new window.Vivus("title-svg", { duration: getTimeout(299) + 1 }, finishedFn);
 }
 
 
