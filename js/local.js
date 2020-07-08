@@ -834,7 +834,7 @@ function closeStoryModal ()
 function storyMouseOut (caller, ix)
 {
     if (null === G_StoryAudio) return;
-    G_StoryAudio.pause();
+    try { G_StoryAudio.pause(); } catch (err) {}
     G_StoryAudio = null;
 }
 
