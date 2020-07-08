@@ -497,13 +497,9 @@ const C_Stories = [
                <p>No &mdash; these stories, audios and pictures are available free of charge.  If you&rsquo;d
                   like to make a donation, though, we certainly won&rsquo;t say no!<p>
                <div style="display:block;text-align:center">
-                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:inline">
-                   <input type="hidden" name="cmd" value="_s-xclick" />
-	           <input type="hidden" name="hosted_button_id" value="TG9TFU645EYVW" />
-	           <input type="image" style="vertical-align:middle" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit"
-                          title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-	           <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
-                 </form>
+	         <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CZ2YEM2XHY8YE&source=url" target="_blank" rel="noopener noreferrer" title="Donate with Paypal">
+	           <img src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" title="PayPal" alt="Donate with PayPal button">
+	         </a>
                </div>
              </div>
 
